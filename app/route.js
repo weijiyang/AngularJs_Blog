@@ -5,9 +5,9 @@ angular.module('routeJs',['ngRoute'])
 		 .when('/',{
 		 	templateUrl:'view/index.html',
 			controller:'mainctrl'})
-		  .when('/index:id',{
+		  .when('/index/:id',{
 		 	templateUrl:'view/index.html',
-			controller:'mainctrl'})
+			controller:'indexController'})
 		 .when('/latestnews',{
 			templateUrl:'view/latestnews.html',
 			controller:'latestnewsController'

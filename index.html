@@ -8,35 +8,33 @@
 <link href="css/style.css" rel="stylesheet" />
 <script src="js/angular.min.js"></script>
 <script src="js/angular-route.js"></script>
-<script src="js/jquery-1.8.3.min.js"></script>
+<script src="js/jquery-3.3.1.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="app/data.js"></script>
 <script src="app/app.js"></script>
 <script src="app/route.js"></script>
 <script src="app/controller.js"></script>
-
-
 </head>
 <body ng-controller="mainctrl">
 <div>
 	<div class="navbar-fixed-top ys2">
 		<div class="row">
 			<div class="toper col-md-2 column bg cen">
-				<img src="images/logo.png"><span>我的APP</span3></span>
+				<img ng-src="images/logo.png"><span>我的APP</span3></span>
 			</div>
 			<div class="toper col-md-10 column bg2">
 				<div class="pull-left ys5">
-					<a href="#"><span class="glyphicon glyphicon-list"></span></a>
-					<a href="#"><span class="glyphicon glyphicon-user"></span></a>
+					<a ng-href="#"><span class="glyphicon glyphicon-list"></span></a>
+					<a ng-href="#"><span class="glyphicon glyphicon-user"></span></a>
 				</div>
 				<div class="pull-left toper_m">
-					<a href="#"><b>我的文章</b></a>
-					<a href="#"><b>最新动态</b></a>
+					<a ng-href="#"><b>我的文章</b></a>
+					<a ng-href="#"><b>最新动态</b></a>
 				</div>
 				<div class="pull-right toper_m">
-					<a href="#"><span class="glyphicon glyphicon-bell"></span></a>
-					<a href="#">{{administrator.name}}</a>
-					<a href="#"><img src="{{administrator.img}}" class="img-circle tou"></a>
+					<a ng-href="#"><span class="glyphicon glyphicon-bell"></span></a>
+					<a ng-href="#">{{administrator.name}}</a>
+					<a ng-href="#"><img ng-src="{{administrator.img}}" class="img-circle tou"></a>
 				</div>
 			</div>
 		</div>
@@ -49,21 +47,21 @@
 		<div class="col-md-2 column bg ys2">
 			<!--头像-->
 			<div class="cen">
-				<img src="{{administrator.img}}" class="img-circle">
+				<img ng-src="{{administrator.img}}" class="img-circle">
 				<h5>{{administrator.name}}</h5><h6>{{administrator.work}}</h6>
 			</div>
 			<!--导航栏-->
 			<ul class="nav">
 				<li class="ys1"> </li>
-				<li class="ys1"><a href=""><span class="glyphicon glyphicon-home"></span> 首页</a></li>
-				<li class="ys1"><a href=""><span class="glyphicon glyphicon-file"></span> 简介</a></li>
-				<li class="ys1"><a href=""><span class="glyphicon glyphicon-envelope"></span> 信息</a></li>
-				<li class="ys1" ><a href="" ng-click="toggle()"><span class="glyphicon glyphicon-cog"></span> 操作</a>
-					<ul class="nav" ng-show="caozuo">
-						<li><a href="">设置栏目</a></li>
-						<li><a href="">更多设置</a></li>
-						<li><a href="">分割线</a></li>
-					</ul>
+				<li class="ys1"><a ng-href=""><span class="glyphicon glyphicon-home"></span>首页</a></li>
+				<li class="ys1"><a ng-href=""><span class="glyphicon glyphicon-file"></span>简介</a></li>
+				<li class="ys1"><a ng-href=""><span class="glyphicon glyphicon-envelope"></span>信息</a></li>
+				<li class="ys1" ><a ng-href="" ng-click="toggle()"><span class="glyphicon glyphicon-cog"></span> 操作</a>
+				<ul class="nav" ng-show="caozuo">
+					<li><a ng-href="">设置栏目</a></li>
+					<li><a ng-href="">更多设置</a></li>
+					<li><a ng-href="">分割线</a></li>
+				</ul>
 				</li>
 			</ul>
 		</div>
@@ -76,22 +74,23 @@
 						 <div class="m1">
 							  <div class="row">
 								<div class="col-sm-7">
-								  <a href="" class="pull-left">
-									<img src="{{administrator.img}}" class="img-circle">
+								  <a ng-href="" class="pull-left">
+									<img ng-src="{{administrator.img}}" class="img-circle">
 								  </a>
 								  <div class="m2">
 									<div>{{administrator.name}} <small> {{administrator.place}}</small></div>
-									<a href="" class="btn btn-sm btn-success btn-rounded" ng-click="funsUp()" ng-hide="checked">添加关注！</a>
-									<a href="" class="btn btn-sm btn-danger btn-rounded" ng-click="funsUp()" ng-show="checked">取消关注！</a>
+									<a ng-href="" ng-if=" !isLogin " class="btn btn-sm btn-success btn-rounded" ng-click="signIn" >登陆</a>
+									<a ng-href="" class="btn btn-sm btn-success btn-rounded" ng-click="funsUp()" ng-show="{{ !checked && isLogin }}">添加关注！</a>
+									<a ng-href="" class="btn btn-sm btn-danger btn-rounded" ng-click="funsUp()" ng-show="{{ checked && isLogin }}">取消关注！</a>
 								  </div>
 								</div>
-								<div class="col-sm-5">
+								<div class="col-sm-5" ng-if="isLogin">
 								  <div class="pull-right text-center zan">
-									<a href="">
+									<a ng-href="">
 									  <span class="h3">{{administrator.dianzan}}</span>
 									  <small> 点赞 </small>
 									</a> ,
-									<a href="">
+									<a ng-href="">
 									  <span class="h3">{{administrator.follow}} </span>
 									  <small> 粉丝</small>
 									</a>
@@ -103,14 +102,14 @@
 					<!--中栏底部-->
 					<div class="m_nav">
 						<ul>
-							<li><a href="#/latestnews" class="btn btn-success btn-group-sm">最新动态</a></li>
-							<li><a href="#/introduction" class="btn btn-success btn-group-sm">简介</a></li>
-							<li><a href="#/news" class="btn btn-success btn-group-sm">消息</a></li>
+							<li><a ng-href="#/latestnews" class="btn btn-success btn-group-sm">最新动态</a></li>
+							<li ng-if="isLogin"><a ng-href="#/introduction" class="btn btn-success btn-group-sm">简介</a></li>
+							<li ng-if="isLogin" ><a ng-href="#/news" class="btn btn-success btn-group-sm">消息</a></li>
 						</ul>
 					</div>
 					<div ng-view></div>
 					<div class="clear wrapper b-t bg-light ">
-				  <span class="pull-right">版本v1.0.0 <a href="#app" class="m-l-sm text-muted"><i class="fa fa-long-arrow-up"></i></a></span>
+				  <span class="pull-right">版本v1.0.0 <a ng-href="#app" class="m-l-sm text-muted"><i class="fa fa-long-arrow-up"></i></a></span>
 				  Copyright © 2017 .版权所有：所谓伊人
 				</div>
 				</div>
@@ -118,9 +117,9 @@
 				<div class="col-md-2 column ys4 h text-center" style="padding:0px;margin:0px;">
 					<h4>我的粉丝</h4>
 				  <ul>
-				  	<li ng-repeat="users in user|orderBy:'id'"><a herf="#/index/users.id"><img src="{{users.img}}" class="img-circle"></a>
+				  	<li ng-repeat="fan in fans|orderBy:'id'"><a ng-href="#/index/{{fan.id}}"><img ng-src="{{fan.img}}" class="img-circle"></a>
 						<div>
-						  <div><a href="/index/{{users.id}}">{{users.name}}</a>
+						  <div><a ng-href="#/index/{{fan.id}}">{{fan.name}}</a>
 						  </div>
 						  {{users.work}}
 						</div>

@@ -4,7 +4,7 @@ var noSignIn={
     id : null,
     name : '未登录',
     work : '未知',
-    img :"images/SignIn.jpg",
+    img :"./images/SignIn.jpg",
     content:"请先登录",
     follow:0,
     replyid:0,
@@ -19,7 +19,7 @@ var userList = [
     id : 1,
     name : '老大',
     work : '程序员',
-    img :"images/a1.jpg",
+    img :"./images/a1.jpg",
     content:"hello user1~",
     follow:1,
     replyid:0,
@@ -27,9 +27,11 @@ var userList = [
     dianzan:11,
     fans : [
     { 
+        id:1,
         name : '粉丝1',
-        img:"images/a1.jpg",
-        work:"work1"
+        img:"./images/a1.jpg",
+        work:"work1",
+        isStar:false
     }
     ]
    
@@ -38,7 +40,7 @@ var userList = [
     id : 3,
     name : '老三',
     work : '打酱油',
-    img :"images/a3.jpg",
+    img :"./images/a3.jpg",
     content:"hello user3~",
     follow:3,
     replyid:0,
@@ -46,19 +48,25 @@ var userList = [
     dianzan:33,
     fans : [
     { 
+        id : 1,
         name : '粉丝1',
-        img:"images/a1.jpg",
-        work:"work1"
+        img:"./images/a1.jpg",
+        work:"work1",
+        isStar:false
     },
     { 
+        id:2,
         name : '粉丝2',
-        img:"images/a2.jpg",
-        work:"work2"
+        img:"./images/a2.jpg",
+        work:"work2",
+        isStar:true
     },
     { 
+        id:3,
         name : '粉丝3',
-        img:"images/a3.jpg",
-        work:"work3"
+        img:"./images/a3.jpg",
+        work:"work3",
+        isStar:true
     }
     ]
 
@@ -66,7 +74,7 @@ var userList = [
     id : 2,
     name : '老二',
     work : '美工',
-    img :"images/a2.jpg",
+    img :"./images/a2.jpg",
     content:"hello user2~",
     follow:2,
     replyid:0,
@@ -74,22 +82,27 @@ var userList = [
     dianzan:22,
      fans : [
     { 
+        id:1,
         name : '粉丝1',
-        img:"images/a1.jpg",
-        work:"work1"
+        img:"./images/a1.jpg",
+        work:"work1",
+        isStar:false
     },
     { 
+        id:2,
         name : '粉丝2',
-        img:"images/a2.jpg",
-        work:"work2"
+        img:"./images/a2.jpg",
+        work:"work2",
+        isStar:false
     }
     ]
   
-},{
+},
+{
     id : 4,
     name : '老四',
     work : '项目经理',
-    img :"images/a4.jpg",
+    img :"./images/a4.jpg",
     content:"hello user4~",
     follow:4,
     replyid:0,
@@ -97,24 +110,32 @@ var userList = [
     dianzan:44,
     fans : [
         { 
+            id:1,
             name : '粉丝1',
-            img:"images/a1.jpg",
-            work:"work1"
+            img:"./images/a1.jpg",
+            work:"work1",
+            isStar:true
         },
         { 
+            id:2,
             name : '粉丝2',
-            img:"images/a2.jpg",
-            work:"work2"
+            img:"./images/a2.jpg",
+            work:"work2",
+            isStar:true
         },
         { 
+            id:3,
             name : '粉丝3',
-            img:"images/a3.jpg",
-            work:"work3"
+            img:"./images/a3.jpg",
+            work:"work3",
+            isStar:false
         },
         { 
+            id:4,
             name : '粉丝4',
-            img:"images/a4.jpg",
-            work:"work4"
+            img:"./images/a4.jpg",
+            work:"work4",
+            isStar:false
         }
     ]
 

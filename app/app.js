@@ -1,19 +1,10 @@
 var app=angular.module("myapp",["routeJs"]);
-app.controller("mainctrl",function($scope,$routeParams){
-	console.log($routeParams.id)
-	//数据导入
-	if($routeParams.id){
-		debugger
-		$scope.administrator=userList[$routeParams.id-1];
-	}
-	else{
-		
-		$scope.administrator=noSignIn;
-	}
-	
-	$scope.user=userList;
-	$scope.caozuo=false;
-	$scope.checked=false;
+app.controller("mainctrl",function($rootScope,$scope,$routeParams){
+	$rootScope.isLogin= false;
+
+	$rootScope.administrator = noSignIn;
+	$rootScope.caozuo=false;
+	$rootScope.checked=false;
 	var check=false;
 	$scope.toggle=function(){
 		$scope.caozuo=!$scope.caozuo;
@@ -32,7 +23,9 @@ app.controller("mainctrl",function($scope,$routeParams){
 			$scope.checked=false;
 		}
 	};
-
+	$scope.signIn = function(){
+		$scope.administrator = userList[0];
+	}
 
 	
 

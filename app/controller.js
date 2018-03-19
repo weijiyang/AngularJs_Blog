@@ -1,6 +1,18 @@
-app.controller('indexController',function(){
-
-});
+app.controller('indexController',["$rootScope","$scope","$routeParams",function($rootScope,$scope , $routeParams){
+	console.log($routeParams.id)
+	if($routeParams.id){
+		$rootScope.administrator=userList[$routeParams.id-1];
+		$rootScope.isLogin = true;
+		for(var i =0 ; i<userList.length ; i++){
+			if(userList[i].fans.length>0 && userList[i].id == $routeParams.id){
+				$rootScope.fans = userList[i].fans;
+			}
+		}
+	}
+	else{
+		$rootScope.administrator=noSignIn;
+	}
+}]);
 app.controller('latestnewsController',function($scope){
 
 	$scope.commentshow=false;//记录是否点击div 弹出评论框
