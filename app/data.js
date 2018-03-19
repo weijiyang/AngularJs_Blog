@@ -1,7 +1,21 @@
 // JavaScript Document
 
+var noSignIn={
+    id : null,
+    name : '未登录',
+    work : '未知',
+    img :"images/SignIn.jpg",
+    content:"请先登录",
+    follow:0,
+    replyid:0,
+    place:"未知",
+    dianzan:0,
+}
+
 // var NavList=["我的消息"}];
-var userList = [{
+var userList = [
+
+{
     id : 1,
     name : '老大',
     work : '程序员',
@@ -11,8 +25,16 @@ var userList = [{
     replyid:0,
     place:"石家庄",
     dianzan:11,
+    fans : [
+    { 
+        name : '粉丝1',
+        img:"images/a1.jpg",
+        work:"work1"
+    }
+    ]
    
-},{
+},
+{
     id : 3,
     name : '老三',
     work : '打酱油',
@@ -22,6 +44,23 @@ var userList = [{
     replyid:0,
     place:"北京",
     dianzan:33,
+    fans : [
+    { 
+        name : '粉丝1',
+        img:"images/a1.jpg",
+        work:"work1"
+    },
+    { 
+        name : '粉丝2',
+        img:"images/a2.jpg",
+        work:"work2"
+    },
+    { 
+        name : '粉丝3',
+        img:"images/a3.jpg",
+        work:"work3"
+    }
+    ]
 
 },{
     id : 2,
@@ -33,6 +72,18 @@ var userList = [{
     replyid:0,
     place:"廊坊",
     dianzan:22,
+     fans : [
+    { 
+        name : '粉丝1',
+        img:"images/a1.jpg",
+        work:"work1"
+    },
+    { 
+        name : '粉丝2',
+        img:"images/a2.jpg",
+        work:"work2"
+    }
+    ]
   
 },{
     id : 4,
@@ -43,6 +94,28 @@ var userList = [{
     follow:4,
     replyid:0,
     place:"山东",
-     dianzan:44,
+    dianzan:44,
+    fans : [
+        { 
+            name : '粉丝1',
+            img:"images/a1.jpg",
+            work:"work1"
+        },
+        { 
+            name : '粉丝2',
+            img:"images/a2.jpg",
+            work:"work2"
+        },
+        { 
+            name : '粉丝3',
+            img:"images/a3.jpg",
+            work:"work3"
+        },
+        { 
+            name : '粉丝4',
+            img:"images/a4.jpg",
+            work:"work4"
+        }
+    ]
 
 }];

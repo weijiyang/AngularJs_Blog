@@ -1,12 +1,14 @@
-// ����ļ�
 var app=angular.module("myapp",["routeJs"]);
 app.controller("mainctrl",function($scope,$routeParams){
+	console.log($routeParams.id)
 	//数据导入
 	if($routeParams.id){
+		debugger
 		$scope.administrator=userList[$routeParams.id-1];
 	}
 	else{
-		$scope.administrator=userList[0];
+		
+		$scope.administrator=noSignIn;
 	}
 	
 	$scope.user=userList;
@@ -18,6 +20,7 @@ app.controller("mainctrl",function($scope,$routeParams){
 	};
 	//添加和取消关注
 	$scope.funsUp=function(){
+		if(!$scope.administrator.id) return false;
 		if(check==false){
 			$scope.administrator.follow++;
 	        check=true;

@@ -8,6 +8,7 @@
 <link href="css/style.css" rel="stylesheet" />
 <script src="js/angular.min.js"></script>
 <script src="js/angular-route.js"></script>
+<script src="js/jquery-1.8.3.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="app/data.js"></script>
 <script src="app/app.js"></script>
@@ -107,7 +108,7 @@
 							<li><a href="#/news" class="btn btn-success btn-group-sm">消息</a></li>
 						</ul>
 					</div>
-					<div ng-view> </div>
+					<div ng-view></div>
 					<div class="clear wrapper b-t bg-light ">
 				  <span class="pull-right">版本v1.0.0 <a href="#app" class="m-l-sm text-muted"><i class="fa fa-long-arrow-up"></i></a></span>
 				  Copyright © 2017 .版权所有：所谓伊人
@@ -119,7 +120,7 @@
 				  <ul>
 				  	<li ng-repeat="users in user|orderBy:'id'"><a herf="#/index/users.id"><img src="{{users.img}}" class="img-circle"></a>
 						<div>
-						  <div><a href="">{{users.name}}</a>
+						  <div><a href="/index/{{users.id}}">{{users.name}}</a>
 						  </div>
 						  {{users.work}}
 						</div>
