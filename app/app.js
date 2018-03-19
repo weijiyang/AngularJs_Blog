@@ -18,6 +18,7 @@ app.controller("mainctrl",function($rootScope,$scope,$routeParams){
 		else{
 			$scope.fansListTitle = "我的粉丝";
 		}
+		
 		$scope.showFansList = !$scope.showFansList;
 	}
 	//添加和取消关注

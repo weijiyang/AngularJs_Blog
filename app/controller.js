@@ -4,15 +4,23 @@ app.controller('indexController',["$rootScope","$scope","$routeParams",function(
 		$rootScope.showFansList = false;
 		//用户粉丝名单替换&用户替换
 		for(var i =0 ; i<userList.length ; i++){
-			if(userList[i].fans.length>0 && userList[i].id == $routeParams.id){
+			if(userList[i].id == $routeParams.id){
 				$rootScope.user = userList[i];
-				for(var j =0;j<userList[i].fans.length;j++){
-					if(userList[j].fans[j].id == $routeParams.id)
-						$rootScope.checked = userList[i].fans[j].isStar
-				}
+				console.log(userList[i])
 				break;
 			}
 		}
+		for(var j = 0;j<userList.length;j++){
+					if(userList[j].id == $rootScope.administrator.id){
+						for(var k=0;k<userList[j].fans.length;k++){
+							if(userList[j].fans[k].id == $routeParams.id){
+								$rootScope.checked = userList[j].fans[k].isStar
+								break
+							}
+						}
+						break;
+					}
+				}
 	}
 	else{
 		$rootScope.administrator=noSignIn;
