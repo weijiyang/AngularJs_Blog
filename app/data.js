@@ -37,40 +37,6 @@ var userList = [
    
 },
 {
-    id : 3,
-    name : '老三',
-    work : '打酱油',
-    img :"./images/a3.jpg",
-    content:"hello user3~",
-    follow:3,
-    replyid:0,
-    place:"北京",
-    dianzan:33,
-    fans : [
-    { 
-        id : 1,
-        name : '粉丝1',
-        img:"./images/a1.jpg",
-        work:"work1",
-        isStar:false
-    },
-    { 
-        id:2,
-        name : '粉丝2',
-        img:"./images/a2.jpg",
-        work:"work2",
-        isStar:true
-    },
-    { 
-        id:3,
-        name : '粉丝3',
-        img:"./images/a3.jpg",
-        work:"work3",
-        isStar:true
-    }
-    ]
-
-},{
     id : 2,
     name : '老二',
     work : '美工',
@@ -97,6 +63,41 @@ var userList = [
     }
     ]
   
+},
+{
+    id : 3,
+    name : '老三',
+    work : '打酱油',
+    img :"./images/a3.jpg",
+    content:"hello user3~",
+    follow:3,
+    replyid:0,
+    place:"北京",
+    dianzan:33,
+    fans : [
+    { 
+        id : 1,
+        name : '粉丝1',
+        img:"./images/a1.jpg",
+        work:"work1",
+        isStar:true
+    },
+    { 
+        id:2,
+        name : '粉丝2',
+        img:"./images/a2.jpg",
+        work:"work2",
+        isStar:true
+    },
+    { 
+        id:3,
+        name : '粉丝3',
+        img:"./images/a3.jpg",
+        work:"work3",
+        isStar:true
+    }
+    ]
+
 },
 {
     id : 4,

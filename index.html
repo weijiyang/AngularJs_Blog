@@ -25,7 +25,7 @@
 			<div class="toper col-md-10 column bg2">
 				<div class="pull-left ys5">
 					<a ng-href="#"><span class="glyphicon glyphicon-list"></span></a>
-					<a ng-href="#"><span class="glyphicon glyphicon-user" ng-click="changeFansList()"></span></a>
+					<a ng-href="#"><span class="glyphicon glyphicon-user" ng-click="changeFansList('fan')"></span></a>
 				</div>
 				<div class="pull-left toper_m">
 					<a ng-href="#"><b>我的文章</b></a>
@@ -47,8 +47,8 @@
 		<div class="col-md-2 column bg ys2">
 			<!--头像-->
 			<div class="cen">
-				<img ng-src="{{administrator.img}}" class="img-circle">
-				<h5>{{administrator.name}}</h5><h6>{{administrator.work}}</h6>
+				<img ng-src="{{user.img}}" class="img-circle">
+				<h5>{{user.name}}</h5><h6>{{user.work}}</h6>
 			</div>
 			<!--导航栏-->
 			<ul class="nav">
@@ -75,26 +75,26 @@
 							  <div class="row">
 								<div class="col-sm-7">
 								  <a ng-href="" class="pull-left">
-									<img ng-src="{{administrator.img}}" class="img-circle">
+									<img ng-src="{{user.img}}" class="img-circle">
 								  </a>
 								  <div class="m2">
-									<div>{{administrator.name}} <small> {{administrator.place}}</small></div>
+									<div>{{user.name}} <small> {{user.place}}</small></div>
 									<a ng-href="" ng-if=" !isLogin " class="btn btn-sm btn-success btn-rounded" ng-click="signIn()" >登陆</a>
-									<a ng-href="" class="btn btn-sm btn-success btn-rounded" ng-click="funsUp()" ng-show="{{ !checked && isLogin }}">添加关注！</a>
-									<a ng-href="" class="btn btn-sm btn-danger btn-rounded" ng-click="funsUp()" ng-show="{{ checked && isLogin }}">取消关注！</a>
+									<a ng-href="" class="btn btn-sm btn-success btn-rounded" ng-click="funsUp()" ng-if="isLogin" ng-show="!checked&&administrator!=user">添加关注！</a>
+									<a ng-href="" class="btn btn-sm btn-danger btn-rounded" ng-click="funsUp()" ng-if="isLogin" ng-show="checked&&administrator!=user">取消关注！</a>
 								  </div>
 								</div>
 								<div class="col-sm-5" ng-if=" isLogin ">
-								  <div class="pull-right text-center zan">
-									<a ng-href="" ng-click="changeFansList()">
-									  <span class="h3">{{administrator.dianzan}}</span>
-									  <small> 点赞 </small>
-									</a> ,
-									<a ng-href="" ng-click="changeFansList()" >
-									  <span class="h3">{{administrator.follow}} </span>
-									  <small> 粉丝</small>
-									</a>
-								  </div>
+								  	<div class="pull-right text-center zan">
+										<a ng-href="" ng-click="changeFansList('zan')">
+										  <span class="h3">{{user.dianzan}}</span>
+										  <small> 点赞 </small>
+										</a> ,
+										<a ng-href="" ng-click="changeFansList('fan')" >
+										  <span class="h3">{{user.follow}} </span>
+										  <small> 粉丝</small>
+										</a>
+								 	</div>
 								</div>
 							  </div>
 						 </div>
@@ -115,9 +115,9 @@
 				</div>
 				<!--右栏-->
 				<div ng-show="showFansList" class="col-md-2 column ys4 h text-center" style="padding:0px;margin:0px;">
-					<h4>我的粉丝</h4>
+					<h4>{{fansListTitle}}</h4>
 				  <ul>
-				  	<li ng-repeat="fan in fans|orderBy:'id'"><a ng-href="#/index/{{fan.id}}"><img ng-src="{{fan.img}}" class="img-circle"></a>
+				  	<li ng-repeat="fan in user.fans|orderBy:'id'"><a ng-href="#/index/{{fan.id}}"><img ng-src="{{fan.img}}" class="img-circle"></a>
 						<div>
 						  <div><a ng-href="#/index/{{fan.id}}">{{fan.name}}</a>
 						  </div>

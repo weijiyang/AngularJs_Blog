@@ -1,11 +1,16 @@
 app.controller('indexController',["$rootScope","$scope","$routeParams",function($rootScope,$scope , $routeParams){
 	console.log($routeParams.id)
 	if($routeParams.id){
-		$rootScope.administrator=userList[$routeParams.id-1];
-		$rootScope.isLogin = true;
+		$rootScope.showFansList = false;
+		//用户粉丝名单替换&用户替换
 		for(var i =0 ; i<userList.length ; i++){
 			if(userList[i].fans.length>0 && userList[i].id == $routeParams.id){
-				$rootScope.fans = userList[i].fans;
+				$rootScope.user = userList[i];
+				for(var j =0;j<userList[i].fans.length;j++){
+					if(userList[j].fans[j].id == $routeParams.id)
+						$rootScope.checked = userList[i].fans[j].isStar
+				}
+				break;
 			}
 		}
 	}
