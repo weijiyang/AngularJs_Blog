@@ -12,6 +12,7 @@ app.controller("mainctrl",function($rootScope,$scope,$routeParams){
 		$scope.caozuo=!$scope.caozuo;
 	};
 	$scope.changeFansList = function( type ){
+		if(!$rootScope.user.id) return false;
 		if(type == "zan"){
 			$scope.fansListTitle = "我的赞";
 		}
@@ -45,44 +46,36 @@ app.controller("mainctrl",function($rootScope,$scope,$routeParams){
 			}
 		}
 	}
+	$scope.backAdminitrator = function(){
+		if($rootScope.administrator)
+		$rootScope.user = $rootScope.administrator;
+	}
 
 	
 
 });
 app.filter('updateTime',function(){
 	return function(date){
-
-		var now = new Date();
-		var now_arr = [];
-		console.log(now.getYear())
-		now_arr.push(now.getYear());
-		now_arr.push(now.getMonth())
-		now_arr.push(now.getDate())
-		now_arr.push(now.getHours())
-		now_arr.push(now.getMinutes())
-		now_arr.push(now.getSeconds())
-		
-		var date_arr = [];
-		date_arr.push(date.getYear());
-		date_arr.push(date.getMonth())
-		date_arr.push(date.getDate())
-		date_arr.push(date.getHours())
-		date_arr.push(date.getMinutes())
-		date_arr.push(date.getSeconds())
-		for(var i =0 ; i<now_arr.length ; i++){
-			// console.log(now_arr[i])
-			// if(now_arr[i].toString() == date_arr[i].toString()) continue;
-			// debugger
-			// num = parseInt(now_arr[i])-parseInt(date_arr[i])
-			// return num
-			// switch (i){
-			// 	case 0 : return num + " year";break;
-			// 	case 1 : return num + " month";break;
-			// 	case 2 : return num + " day";break;
-			// 	case 3 : return num + " hours";break;
-			// 	case 4 : return num + " minutes";break;
-			// 	default : return num + " seconds";
-			// }		
+		var old = new Date(2017,5,1,5,2,1).getTime()
+		var now = new Date().getTime()
+		var tip = (parseInt(now) - parseInt(old))/1000;
+		if(tip >= 31536000){
+			return Math.floor(tip/31536000) + " years";
+		}
+		else if( tip >=2592000 ){
+			return Math.floor(tip/2592000) + " months";
+		}
+		else if( tip >= 86400 ){
+			return Math.floor(tip/86400) + " days";
+		}
+		else if( tip >= 3600 ){
+			return Math.floor(tip/3600) + " hours";
+		}
+		else if( tip >60 ){
+			return Math.floor(tip/60) + " minutes";
+		}
+		else{
+			return Math.floor(tip) + " seconds";
 		}
 	}
 })

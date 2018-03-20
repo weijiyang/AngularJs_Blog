@@ -1,5 +1,9 @@
 html {
   background-color: #f0f3f4;
+  transition:all 2.5s;
+  -webkit-transition:all 2.5s;
+  -moz-transition: all 2s; /* Firefox 4 */
+  -o-transition: all 2s; /* Opera */
 }
 body {
   font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;

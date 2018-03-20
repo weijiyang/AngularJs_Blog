@@ -5,7 +5,7 @@ var data_month = new Date(2018,0,14,5,10,30);
 var data_date = new Date(2018,2,14,5,10,30);
 var data_hour = new Date(2018,2,20,5,10,30);
 var data_minute = new Date(2018,2,20,11,10,30);
-console.log(data_year)
+// console.log(data_year)
 var noSignIn={
     id : null,
     name : '未登录',
