@@ -1,0 +1,58 @@
+						
+<div class="m_bottom" >
+	<div class="padder" ng-repeat="article in administrator.article" >      
+		<div class="streamline b-l b-info m-l-lg m-b padder-v">
+		 <div>
+		<a class="pull-left thumb-sm avatar m-l-n-md">
+			  <img ng-src="{{administrator.img}}" class="img-circle" alt="...">
+			</a>
+			<div class="m-l-lg m-b-lg">
+			  <div class="m-b-xs">
+				<a ng-href="" class="h4">{{administrator.name}}</a>
+				<span class="text-muted m-l-sm pull-right">
+				  {{article.article_time | updateTime }} 12313
+				</span>
+			  </div>
+			  <div class="m-b">
+				<div class="m-b">
+				{{article.article_content}}
+				</div>
+				<img ng-src="{{article.article_img}}" class="b b-a wrapper-xs bg-white img-responsive">
+				<div class="m-t-sm">
+				  <a ng-href="" class="text-muted m-xs"><i class="icon-action-redo"></i></a>
+				  <a ng-href="" class="text-muted m-xs"><i class="icon-star"></i></a>
+				  <a ng-href="" class="text-muted m-xs"><i class="icon-refresh"></i>{{article.article_good}}</a>
+				</div>
+			  </div>
+			</div>
+		  </div>				
+		</div>
+	  </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

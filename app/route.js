@@ -15,6 +15,9 @@ angular.module('routeJs',['ngRoute'])
          .when('/introduction',{
          	templateUrl:'view/introduction.html',
             controller:'introductionController'})
+         .when('/myarticle',{
+         	templateUrl : 'view/myarticle.html',
+         	controller:'myarticleController'})
          .when('/news',{
          	templateUrl:'view/news.html',
             controller:'newsController'})

@@ -26,6 +26,9 @@ app.controller('indexController',["$rootScope","$scope","$routeParams",function(
 		$rootScope.administrator=noSignIn;
 	}
 }]);
+app.controller('myarticleController',['$scope',function($scope){
+
+}])
 app.controller('latestnewsController',function($scope){
 
 	$scope.commentshow=false;//记录是否点击div 弹出评论框

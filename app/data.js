@@ -1,5 +1,11 @@
 // JavaScript Document
-
+var date = new Date()
+var data_year = new Date(2010,0,14,5,10,30);
+var data_month = new Date(2018,0,14,5,10,30);
+var data_date = new Date(2018,2,14,5,10,30);
+var data_hour = new Date(2018,2,20,5,10,30);
+var data_minute = new Date(2018,2,20,11,10,30);
+console.log(data_year)
 var noSignIn={
     id : null,
     name : '未登录',
@@ -10,6 +16,7 @@ var noSignIn={
     replyid:0,
     place:"未知",
     dianzan:0,
+    article:[]
 }
 
 // var NavList=["我的消息"}];
@@ -33,6 +40,14 @@ var userList = [
         work:"work1",
         isStar:false
     }
+    ],
+    article:[
+        {
+            article_id:1,
+            article_img:"./images/c5.jpg",
+            article_content:"这里是文章 1",
+            article_time:new Date()
+        }
     ]
    
 },
@@ -61,6 +76,15 @@ var userList = [
         work:"work2",
         isStar:false
     }
+    ],
+    article:[
+        {
+            article_id:1,
+            article_img:"./images/c5.jpg",
+            article_content:"这里是文章 1",
+            article_time:new Date(),
+            article_good:1
+        }
     ]
   
 },
@@ -96,6 +120,15 @@ var userList = [
         work:"work3",
         isStar:true
     }
+    ],
+    article:[
+        {
+            article_id:1,
+            article_img:"./images/c5.jpg",
+            article_content:"这里是文章 1",
+            article_time:new Date(),
+            article_good:1
+        }
     ]
 
 },
@@ -137,6 +170,22 @@ var userList = [
             img:"./images/a4.jpg",
             work:"work4",
             isStar:false
+        }
+    ],
+    article:[
+        {
+            article_id:1,
+            article_img:"./images/c5.jpg",
+            article_content:"这里是文章 1",
+            article_time:data_month,
+            article_good:3
+        },
+        {
+            article_id:2,
+            article_img:"./images/c5.jpg",
+            article_content:"这里是文章 2",
+            article_time:data_year,
+            article_good:2
         }
     ]
 
