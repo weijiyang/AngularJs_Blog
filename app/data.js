@@ -1,5 +1,4 @@
 // JavaScript Document
-var date = new Date()
 var data_year = new Date(2010,0,14,5,10,30);
 var data_month = new Date(2018,0,14,5,10,30);
 var data_date = new Date(2018,2,14,5,10,30);
